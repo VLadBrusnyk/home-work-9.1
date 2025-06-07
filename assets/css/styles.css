@@ -132,14 +132,14 @@ a {
     font-size: 16px;
 }
 
+.about {
+    background-color: var(--color-white);
 
-
-
-
+}
 
 .experience {
     padding-top: 100px;
-    padding-bottom: 100px;
+    padding-bottom: 94px;
     background-color: var(--color-dark-blue);
     color: var(--color-white);
 }
@@ -206,13 +206,40 @@ a {
     font-weight: 400;
     color: var(--color-white);
   }
-
-
 .process {
+    background-color: var(--color-light-gray);
 }
-.process__title {
-}
+
 .process__description {
+    font-weight: 400;
+    line-height: var(--line-heigh);
 }
 .video {
+    background-color: var(--color-light-gray);
+    padding-bottom: 100px;
 }
+
+.video__iframe {
+    width: 100%;
+    height: auto;
+    border: 0;
+    min-height: 200px;
+    aspect-ratio: 16/9;
+}
+
+.footer {
+    background-color: var(--color-dark-blue);
+    color: var(--color-white);
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  
+  .footer__title {
+    font-size: 21px;
+    font-weight: 500;
+    margin-bottom: 18px;
+  }
+  
+  .footer__description {
+    font-size: 13px;
+  }
