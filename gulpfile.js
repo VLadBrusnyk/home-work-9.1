@@ -5,6 +5,7 @@ import replace from 'gulp-replace'
 import dc from 'postcss-discard-comments'
 import browserSync from 'browser-sync'
 import postcss from 'gulp-postcss'
+import csscomb from 'gulp-csscomb'
 import cssnano from 'cssnano'
 import rename from 'gulp-rename'
 import autoprefixer from 'autoprefixer'
@@ -88,6 +89,10 @@ function compilePug() {
   return src(PATH.pugRootFile)
     .pipe(pug({ pretty: true }))
     .pipe(dest(PATH.htmlFolder))
+}
+
+function comb() {
+  return src(PATH.scssAllFiles).pipe(csscomb()).pipe(dest(PATH.scssFolder))
 }
 
 function serverInit() {
@@ -195,12 +200,13 @@ function createStructure() {
 }
 
 // Експорт функцій для використання як задач
-export { compileScss, compileScssMin, compileScssDev, compilePug, serverInit, sync, watchFiles, createStructure }
+export { compileScss, compileScssMin, compileScssDev, compilePug, comb, serverInit, sync, watchFiles, createStructure }
 
 // Композитні задачі
-export const scss = series(compileScss, compileScssMin)
+export const scss = series(comb, compileScss, compileScssMin)
 export const min = compileScssMin
 export const dev = compileScssDev
+export const combTask = series(comb, compileScss, compileScssMin)
 export const pugTask = compilePug
 export const cs = createStructure
 export const startWatch = watchFiles
