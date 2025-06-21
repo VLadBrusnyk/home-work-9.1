@@ -1,0 +1,61 @@
+// Fonts
+$font-family: "Roboto", sans-serif;
+$font-size-base: 16px;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$line-height: 1.64;
+$line-height-sm: 1.4;
+$letter-spacing: 0.1em;
+
+// Colors
+$color-light-gray: #EEEFF1;
+$color-dark-blue: #34547A;
+$color-gray: #727272;
+$color-white: #FFFFFF;
+$color-black: #000000;
+
+// Additional colors for better design
+$color-hover: darken($color-dark-blue, 10%);
+$color-active: lighten($color-dark-blue, 5%);
+$color-text-muted: lighten($color-gray, 20%);
+
+// Container sizes
+$container-primary: 1110px;
+$container-secondary: 540px;
+$container-padding: 40px;
+$container-padding-sm: 20px;
+
+// Spacing
+$spacing-xs: 10px;
+$spacing-sm: 20px;
+$spacing-md: 40px;
+$spacing-lg: 60px;
+$spacing-xl: 100px;
+
+// Breakpoints
+$breakpoint-xs: 375px;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Typography scale
+$font-size-h1: 3rem;
+$font-size-h2: 2rem;
+$font-size-h3: 1.5rem;
+$font-size-lg: 21px;
+$font-size-sm: 13px;
+
+// Component specific
+$button-min-width: 225px;
+$button-min-height: 65px;
+$button-border-radius: 0;
+
+// Z-index scale
+$z-dropdown: 1000;
+$z-sticky: 1020;
+$z-fixed: 1030;
+$z-modal-backdrop: 1040;
+$z-modal: 1050;
+$z-popover: 1060;
+$z-tooltip: 1070;

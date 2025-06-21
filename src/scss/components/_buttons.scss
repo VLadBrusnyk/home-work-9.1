@@ -1,0 +1,106 @@
+// Button components
+.btn {
+  @extend %button-base;
+  
+  &--primary {
+    @include button-primary;
+  }
+  
+  &--secondary {
+    background-color: transparent;
+    color: $color-dark-blue;
+    border: 2px solid $color-dark-blue;
+    
+    &:hover {
+      background-color: $color-dark-blue;
+      color: $color-white;
+    }
+  }
+  
+  &--small {
+    min-width: 180px;
+    min-height: 50px;
+    font-size: 14px;
+    
+    @include respond-to(xs) {
+      min-width: 160px;
+      min-height: 45px;
+      font-size: $font-size-sm;
+    }
+  }
+}
+
+// Card component
+.card {
+  background-color: $color-white;
+  padding: $spacing-md;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba($color-black, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba($color-black, 0.15);
+  }
+  
+  &__title {
+    @include text-style(h3);
+    margin-bottom: $spacing-sm;
+    color: $color-dark-blue;
+  }
+  
+  &__content {
+    color: $color-gray;
+    line-height: $line-height;
+  }
+}
+
+// Navigation component enhancements
+.nav-menu {
+  &--mobile {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: $color-white;
+    z-index: $z-modal;
+    transition: left 0.3s ease;
+    padding: $spacing-lg;
+    
+    &.is-open {
+      left: 0;
+    }
+    
+    .navbar__list {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-md;
+      margin-top: $spacing-lg;
+    }
+    
+    .navbar__link {
+      font-size: 1.2rem;
+      padding: $spacing-sm 0;
+      border-bottom: 1px solid $color-light-gray;
+    }
+  }
+}
+
+// Loading states
+.loading {
+  &__spinner {
+    @include flex-center;
+    width: 40px;
+    height: 40px;
+    border: 3px solid $color-light-gray;
+    border-top: 3px solid $color-dark-blue;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

@@ -1,0 +1,73 @@
+// Extends for common patterns
+%flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+%flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+%text-uppercase {
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing;
+}
+
+%transition-base {
+  transition: all 0.3s ease;
+}
+
+%section-title {
+  @include text-style(h2);
+  margin-bottom: 36px;
+  
+  @include respond-to(sm) {
+    margin-bottom: $spacing-sm;
+  }
+}
+
+%section-description {
+  color: $color-gray;
+  line-height: $line-height;
+  font-weight: $font-weight-normal;
+  
+  @include respond-to(lg) {
+    font-size: $font-size-base;
+  }
+  
+  @include respond-to(md) {
+    font-size: 15px;
+  }
+  
+  @include respond-to(sm) {
+    font-size: 14px;
+  }
+  
+  @include respond-to(xs) {
+    font-size: $font-size-sm;
+  }
+}
+
+%button-base {
+  @extend %flex-center;
+  @extend %text-uppercase;
+  @extend %transition-base;
+  
+  padding: 0.5em;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  
+  &:focus {
+    outline: 2px solid $color-active;
+    outline-offset: 2px;
+  }
+}

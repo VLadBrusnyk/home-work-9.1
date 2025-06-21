@@ -1,0 +1,39 @@
+h1 {
+  @include text-style(h1);
+  
+  @include respond-to(lg) {
+    font-size: 2.5rem;
+  }
+  
+  @include respond-to(md) {
+    font-size: 2rem;
+  }
+  
+  @include respond-to(sm) {
+    font-size: 1.5rem;
+  }
+  
+  @include respond-to(xs) {
+    font-size: 1.25rem;
+  }
+}
+
+h2 {
+  @include text-style(h2);
+  
+  @include respond-to(lg) {
+    font-size: 1.75rem;
+  }
+  
+  @include respond-to(md) {
+    font-size: 1.5rem;
+  }
+  
+  @include respond-to(sm) {
+    font-size: 1.25rem;
+  }
+  
+  @include respond-to(xs) {
+    font-size: 1.125rem;
+  }
+}

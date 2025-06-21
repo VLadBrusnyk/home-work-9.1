@@ -1,0 +1,131 @@
+.header {
+  background-color: $color-light-gray;
+  padding-top: 69px;
+  padding-bottom: 140px;
+  
+  @include respond-to(md) {
+    padding-top: $spacing-md;
+    padding-bottom: 80px;
+  }
+  
+  @include respond-to(sm) {
+    padding-top: $spacing-sm;
+    padding-bottom: $spacing-lg;
+  }
+}
+
+.navbar {
+  margin-bottom: 141px;
+  position: relative;
+  
+  @include respond-to(md) {
+    margin-bottom: 80px;
+  }
+  
+  @include respond-to(sm) {
+    margin-bottom: $spacing-md;
+  }
+  
+  &__list {
+    display: flex;
+    gap: 27px;
+    margin-left: -0.75em;
+    
+    @include respond-to(md) {
+      gap: $spacing-sm;
+    }
+    
+    @include respond-to(sm) {
+      display: none;
+    }
+  }
+  
+  &__link {
+    display: block;
+    letter-spacing: $letter-spacing;
+    line-height: $line-height;
+    padding: 0.5em 0.75em;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    
+    &:hover {
+      color: $color-hover;
+    }
+    
+    &--active {
+      color: $color-dark-blue;
+      font-weight: $font-weight-medium;
+    }
+  }
+}
+
+.burger {
+  display: none;
+  @include button-reset;
+  font-size: 24px;
+  color: $color-dark-blue;
+  
+  @include tablet-up {
+    display: none !important;
+  }
+  
+  @include mobile-only {
+    display: block;
+  }
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: $container-secondary;
+  
+  &__title {
+    margin-bottom: $spacing-md;
+    margin-top: 0;
+    
+    @include respond-to(sm) {
+      margin-bottom: $spacing-sm;
+    }
+  }
+  
+  &__description {
+    margin-bottom: 57px;
+    color: $color-gray;
+    line-height: $line-height;
+    
+    @include respond-to(lg) {
+      font-size: $font-size-base;
+    }
+    
+    @include respond-to(md) {
+      font-size: 15px;
+    }
+    
+    @include respond-to(sm) {
+      margin-bottom: 30px;
+      font-size: 14px;
+    }
+    
+    @include respond-to(xs) {
+      font-size: $font-size-sm;
+    }
+  }
+  
+  &__button {
+    @include button-primary;
+    
+    @include respond-to(sm) {
+      min-width: 180px;
+      min-height: 50px;
+      font-size: 14px;
+    }
+    
+    @include respond-to(xs) {
+      margin: 0 auto;
+      min-width: 160px;
+      min-height: 45px;
+      font-size: $font-size-sm;
+    }
+  }
+}

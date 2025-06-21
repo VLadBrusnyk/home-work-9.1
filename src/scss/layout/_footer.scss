@@ -1,0 +1,21 @@
+.footer {
+  background-color: $color-dark-blue;
+  color: $color-white;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  
+  @include respond-to(xs) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  
+  &__title {
+    @include text-style(large);
+    margin-bottom: 18px;
+  }
+  
+  &__description {
+    @include text-style(small);
+    line-height: $line-height;
+  }
+}

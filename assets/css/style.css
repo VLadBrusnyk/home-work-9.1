@@ -29,18 +29,6 @@ html{
   line-height:var(--line-height);
 }
 
-h1{
-  font-size:3rem;
-  font-weight:500;
-  line-height:var(--line-height-sm);
-}
-
-h2{
-  font-size:2rem;
-  font-weight:500;
-  line-height:var(--line-height-sm);
-}
-
 a{
   text-decoration:none;
   color:var(--color-black);
@@ -54,6 +42,33 @@ a{
 .container--sm{
   width:min(100% - 40px, var(--container-secondary));
   margin-inline:auto;
+}
+
+.visually-hidden{
+  position:absolute;
+  width:1px;
+  height:1px;
+  margin:-1px;
+  border:0;
+  padding:0;
+  white-space:nowrap;
+  -webkit-clip-path:inset(100%);
+  clip-path:inset(100%);
+  clip:rect(0 0 0 0);
+  overflow:hidden;
+  visibility:hidden;
+}
+
+h1{
+  font-size:3rem;
+  font-weight:500;
+  line-height:var(--line-height-sm);
+}
+
+h2{
+  font-size:2rem;
+  font-weight:500;
+  line-height:var(--line-height-sm);
 }
 
 .header{
@@ -160,21 +175,6 @@ a{
   padding-bottom:94px;
   background-color:var(--color-dark-blue);
   color:var(--color-white);
-}
-
-.visually-hidden{
-  position:absolute;
-  width:1px;
-  height:1px;
-  margin:-1px;
-  border:0;
-  padding:0;
-  white-space:nowrap;
-  -webkit-clip-path:inset(100%);
-  clip-path:inset(100%);
-  clip:rect(0 0 0 0);
-  overflow:hidden;
-  visibility:hidden;
 }
 
 .projects__container{

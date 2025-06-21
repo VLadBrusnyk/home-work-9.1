@@ -1,0 +1,174 @@
+// Media query mixins
+@mixin mobile-only {
+  @media (max-width: #{$breakpoint-sm - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet-up {
+  @media (min-width: #{$breakpoint-sm}) {
+    @content;
+  }
+}
+
+@mixin tablet-only {
+  @media (min-width: #{$breakpoint-sm}) and (max-width: #{$breakpoint-md - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop-up {
+  @media (min-width: #{$breakpoint-md}) {
+    @content;
+  }
+}
+
+@mixin desktop-only {
+  @media (min-width: #{$breakpoint-md}) and (max-width: #{$breakpoint-lg - 1px}) {
+    @content;
+  }
+}
+
+@mixin large-up {
+  @media (min-width: #{$breakpoint-lg}) {
+    @content;
+  }
+}
+
+@mixin xl-up {
+  @media (min-width: #{$breakpoint-xl}) {
+    @content;
+  }
+}
+
+// Custom breakpoint mixin
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == xs {
+    @media (max-width: #{$breakpoint-xs}) {
+      @content;
+    }
+  }
+  @else if $breakpoint == sm {
+    @media (max-width: #{$breakpoint-sm - 1px}) {
+      @content;
+    }
+  }
+  @else if $breakpoint == md {
+    @media (max-width: #{$breakpoint-md - 1px}) {
+      @content;
+    }
+  }
+  @else if $breakpoint == lg {
+    @media (max-width: #{$breakpoint-lg - 1px}) {
+      @content;
+    }
+  }
+}
+
+// Component mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin container($size: primary) {
+  @if $size == primary {
+    width: min(100% - #{$container-padding}, #{$container-primary});
+  } @else if $size == secondary {
+    width: min(100% - #{$container-padding}, #{$container-secondary});
+  }
+  margin-inline: auto;
+  
+  @include respond-to(xs) {
+    $container-width: if($size == primary, #{$container-primary}, #{$container-secondary});
+    width: min(100% - #{$container-padding-sm}, $container-width);
+  }
+}
+
+@mixin button-reset {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+@mixin button-primary {
+  @include flex-center;
+  min-width: $button-min-width;
+  min-height: $button-min-height;
+  padding: 0.5em;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing;
+  background-color: $color-dark-blue;
+  color: $color-white;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  
+  &:hover {
+    background-color: $color-hover;
+  }
+  
+  &:active {
+    background-color: $color-active;
+  }
+}
+
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+  visibility: hidden;
+}
+
+@mixin section-spacing {
+  padding-top: $spacing-xl;
+  padding-bottom: $spacing-xl;
+  
+  @include respond-to(md) {
+    padding-top: $spacing-lg;
+    padding-bottom: $spacing-lg;
+  }
+}
+
+@mixin text-style($size: base, $weight: normal, $line-height: null) {
+  @if $size == h1 {
+    font-size: $font-size-h1;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-sm;
+  } @else if $size == h2 {
+    font-size: $font-size-h2;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-sm;
+  } @else if $size == large {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-medium;
+  } @else if $size == small {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-normal;
+  } @else {
+    font-size: $font-size-base;
+    font-weight: if($weight == medium, $font-weight-medium, $font-weight-normal);
+  }
+  
+  @if $line-height {
+    line-height: $line-height;
+  } @else if $size == base {
+    line-height: $line-height;
+  }
+}
