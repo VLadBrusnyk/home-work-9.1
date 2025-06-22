@@ -1,0 +1,85 @@
+@use "../abstracts" as *;
+
+.experience {
+  padding-top: 100px;
+  padding-bottom: 94px;
+
+  color: $color-white;
+  background-color: $color-dark-blue;
+}
+
+.projects {
+  &__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+
+  &__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 20px;
+
+    &:nth-child(1) {
+      -webkit-transform: translateX(9px);
+      -ms-transform: translateX(9px);
+      transform: translateX(9px);
+    }
+
+    &:nth-child(3) {
+      -webkit-transform: translateX(-7px);
+      -ms-transform: translateX(-7px);
+      transform: translateX(-7px);
+    }
+
+    &:nth-child(4) {
+      -webkit-transform: translateX(-14px);
+      -ms-transform: translateX(-14px);
+      transform: translateX(-14px);
+    }
+
+    &:nth-child(5) {
+      -webkit-transform: translateX(-19px);
+      -ms-transform: translateX(-19px);
+      transform: translateX(-19px);
+    }
+
+    &:nth-child(6) {
+      -webkit-transform: translateX(-27px);
+      -ms-transform: translateX(-27px);
+      transform: translateX(-27px);
+    }
+
+    &-items {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -ms-flex-pack: distribute;
+      justify-content: space-around;
+    }
+
+    &-item {
+      color: $color-white;
+
+      font-size: 21px;
+      font-weight: 500;
+      line-height: 100%;
+    }
+
+    &-subitem {
+      color: $color-white;
+
+      font-weight: 400;
+    }
+  }
+}

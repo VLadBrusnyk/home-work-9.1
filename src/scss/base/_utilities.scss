@@ -1,0 +1,13 @@
+@use "../abstracts" as *;
+
+.container {
+  width: min(100% - 40px, $container-primary);
+
+  margin-inline: auto;
+}
+
+.container--sm {
+  width: min(100% - 40px, $container-secondary);
+
+  margin-inline: auto;
+}

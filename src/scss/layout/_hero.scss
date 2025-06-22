@@ -1,0 +1,54 @@
+@use "../abstracts" as *;
+
+.hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  align-items: flex-start;
+  -ms-flex-align: start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+
+  max-width: $container-secondary;
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 40px;
+  }
+
+  &__description {
+    margin-bottom: 57px;
+
+    color: $color-gray;
+
+    line-height: $line-height;
+  }
+
+  &__button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -ms-flex-align: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    min-width: 225px;
+    min-height: 65px;
+    padding: 0.5em;
+
+    letter-spacing: $letter-spacing;
+    text-transform: uppercase;
+
+    color: $color-white;
+    background-color: $color-dark-blue;
+  }
+}

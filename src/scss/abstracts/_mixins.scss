@@ -1,0 +1,37 @@
+@use "variables" as *;
+
+// Міксин для центрування через flexbox
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Міксин базових стилів для кнопок
+@mixin button-base {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: fit-content;
+  padding: 0.5em;
+
+  cursor: pointer;
+  letter-spacing: $letter-spacing;
+  text-transform: uppercase;
+
+  border: none;
+}
+
+// Міксин відступів для секцій
+@mixin section-padding($top: 100px, $bottom: 100px) {
+  padding-top: $top;
+  padding-bottom: $bottom;
+}
+
+// Міксин стилів тексту
+@mixin text-style($size, $weight, $line-height: $line-height) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+}

@@ -1,0 +1,31 @@
+@use "../abstracts" as *;
+
+.navbar {
+  margin-bottom: 141px;
+
+  &__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 27px;
+
+    margin-left: -0.75em;
+  }
+
+  &__link {
+    display: block;
+
+    padding: 0.5em 0.75em;
+
+    letter-spacing: $letter-spacing;
+    text-transform: uppercase;
+
+    line-height: $line-height;
+
+    &--active {
+      color: $color-dark-blue;
+
+      font-weight: 500;
+    }
+  }
+}
